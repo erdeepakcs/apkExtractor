@@ -1,41 +1,84 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="@android:dimen/app_icon_size">
+    android:layout_height="match_parent">
 
-    <ImageView
-        android:id="@+id/iconImageView"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:padding="10dp"
-        android:src="@mipmap/ic_launcher_round"
-        android:layout_width="@android:dimen/app_icon_size"
-        android:layout_height="wrap_content" />
-    <TextView
-        android:id="@+id/nameTextView"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="10dp"
-        android:paddingLeft="30dp"
-        android:layout_toRightOf="@id/iconImageView"
-        android:text="Medium Text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-    <Button
-        android:id="@+id/shareBtn"
-        android:text="Share"
-        android:textAllCaps="false"
-        android:layout_marginRight="10dp"
-        android:layout_toLeftOf="@id/extractBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-    <Button
-        android:id="@+id/extractBtn"
-        android:layout_marginRight="10dp"
-        android:text="Extract"
-        android:textAllCaps="false"
-        android:layout_alignParentRight="true"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+   <android.support.v7.widget.CardView
+       android:layout_marginRight="2dp"
+       android:layout_marginLeft="2dp"
+       app:cardUseCompatPadding="true"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content">
+       <LinearLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:layout_marginLeft="2dp"
+           android:layout_marginRight="2dp"
+           android:orientation="vertical">
+           <RelativeLayout
+               android:id="@+id/topLayout"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content">
+               <ImageView
+                   android:id="@+id/iconImageView"
+                   android:layout_marginTop="2dp"
+                   android:layout_alignParentLeft="true"
+                   android:layout_centerVertical="true"
+                   android:src="@mipmap/ic_launcher_round"
+                   android:layout_width="32dp"
+                   android:layout_height="32dp"/>
+               <LinearLayout
+                   android:layout_toRightOf="@id/iconImageView"
+                   android:layout_marginLeft="5dp"
+                   android:layout_centerVertical="true"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:orientation="vertical">
+                   <TextView
+                       android:id="@+id/nameTextView"
+                       android:layout_centerInParent="true"
+                       android:textSize="15dp"
+                       android:text="Medium Text"
+                       android:ellipsize="end"
+                       android:maxLines="1"
+                       android:layout_toRightOf="@id/iconImageView"
+                       android:layout_width="150dp"
+                       android:layout_height="wrap_content" />
+                   <TextView
+                       android:id="@+id/apkSizeTxtView"
+                       android:layout_below="@id/iconImageView"
+                       android:text="Medium Text"
+                       android:textSize="10dp"
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content" />
+               </LinearLayout>
+               <LinearLayout
+                   android:layout_alignParentRight="true"
+                   android:orientation="horizontal"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content">
+                   <Button
+                       android:id="@+id/shareBtn"
+                       android:padding="10dp"
+                       android:text="Share"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:background="@drawable/transparent_bg_bordered_button"/>
+                   <Button
+                       android:id="@+id/extractBtn"
+                       android:layout_marginLeft="5dp"
+                       android:src="@drawable/ic_action_unpack"
+                       android:padding="10dp"
+                       android:text="Extract"
+                       android:layout_alignParentRight="true"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:background="@drawable/transparent_bg_bordered_button"/>
+               </LinearLayout>
+           </RelativeLayout>
+       </LinearLayout>
 
+   </android.support.v7.widget.CardView>
 </RelativeLayout>

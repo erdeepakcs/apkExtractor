@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -39,6 +40,7 @@ public class AppAdapter extends ArrayAdapter<AppList> {
             appHolder.appImageView = row.findViewById(R.id.iconImageView);
             appHolder.extractBtn = row.findViewById(R.id.extractBtn);
             appHolder.shareBtn = row.findViewById(R.id.shareBtn);
+            appHolder.apkSizeView = row.findViewById(R.id.apkSizeTxtView);
             row.setTag(appHolder);
         }
         else
@@ -48,6 +50,7 @@ public class AppAdapter extends ArrayAdapter<AppList> {
         final AppList appList = mData.get(position);
         appHolder.appNameView.setText(appList.name);
         appHolder.appImageView.setImageDrawable(appList.icon);
+        appHolder.apkSizeView.setText(appList.apkSize);
         appHolder.extractBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -79,6 +82,7 @@ public class AppAdapter extends ArrayAdapter<AppList> {
     private static class AppHolder
     {
         TextView appNameView;
+        TextView apkSizeView;
         ImageView appImageView;
         Button extractBtn;
         Button shareBtn;
